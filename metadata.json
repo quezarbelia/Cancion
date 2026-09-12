@@ -1,0 +1,6 @@
+{
+  "name": "Nuestra Historia de Amor",
+  "description": "Experiencia romántica e interactiva de aniversario con carta digital, recuerdos polaroid, coordenadas de cita y reproductor con bloqueo temporal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+:root {
+  --theme-primary: #6C0820;
+  --theme-secondary: #F2AEBC;
+  --theme-surface: #F2DCDB;
+  --theme-accent: #5A86CB;
+  --theme-accent-dark: #3D5D91;
+  --theme-bg: #FAF4F4;
+  --theme-card-bg: #FFFFFF;
+  --theme-text: #2A181C;
+}
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-script: "Great Vibes", cursive;
+
+  --color-rosegold: #D4AF37;
+  --color-rosegold-light: #F8E8E8;
+  --color-rosegold-muted: #B76E79;
+  --color-rosegold-accent: #C5838B;
+  --color-rosegold-dark: #93545D;
+
+  --color-sage-light: #EAF0EB;
+  --color-sage: #8FA38F;
+  --color-sage-dark: #586A58;
+
+  --color-ivory: #FAF7F2;
+  --color-parchment: #FDFBF7;
+}
+
+/* Falling petal animation */
+@keyframes floatPetal {
+  0% {
+    transform: translateY(-5vh) rotate(0deg) translateX(0px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(25px);
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(-20px);
+    opacity: 0;
+  }
+}
+
+.animate-floatPetal {
+  animation-name: floatPetal;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Custom 3D perspective and transformations */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Floating animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4.5s ease-in-out infinite;
+}
+
+/* Glow Pulse */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+/* Organic botanical sway & flower bloom breathing */
+@keyframes flowerBreathe {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.025) rotate(0.6deg);
+  }
+}
+
+.animate-flower-breathe {
+  animation: flowerBreathe 5s ease-in-out infinite;
+}
+
+@keyframes stemSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(0.8deg);
+  }
+  66% {
+    transform: rotate(-0.8deg);
+  }
+}
+
+.animate-stem-sway {
+  animation: stemSway 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes pollenShimmer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-pollen-shimmer {
+  animation: pollenShimmer 30s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes particleAscent {
+  0% {
+    transform: translate(0, 0) scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(var(--tw-translate-x, 15px), -65px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-particle-ascent {
+  animation: particleAscent 2.8s ease-out infinite;
+}
+
+/* Mobile Safe Area and Viewport Helpers */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0.5rem);
+}
+
+/* Mobile Touch Optimizations */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbars while keeping scroll functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Radiant sunburst glow animation for yellow / radiant flower */
+@keyframes sunburstGlow {
+  0%, 100% {
+    transform: scale(0.95) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1) rotate(4deg);
+    opacity: 0.85;
+  }
+}
+.animate-sunburst {
+  animation: sunburstGlow 7s ease-in-out infinite;
+}
+
+/* Dewdrop glisten animation */
+@keyframes dewSparkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+.animate-dew-sparkle {
+  animation: dewSparkle 3s ease-in-out infinite;
+}
+
+/* Modal slide up for mobile */
+@keyframes sheetSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-sheet-slide {
+  animation: sheetSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Soft cinematic fade for chapters */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-slide {
+  animation: fadeInSlide 0.4s ease-out forwards;
+}
