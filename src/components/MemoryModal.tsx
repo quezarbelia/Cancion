@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Heart, Calendar, Sparkles } from 'lucide-react';
 import { Memory } from '../types';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 interface MemoryModalProps {
   memory: Memory | null;
@@ -35,7 +36,7 @@ export const MemoryModal: React.FC<MemoryModalProps> = ({ memory, onClose }) => 
         <div className="w-full aspect-[4/5] rounded-2xl bg-stone-100 overflow-hidden relative shadow-inner">
           {memory.imageUrl ? (
             <img
-              src={memory.imageUrl}
+              src={getOptimizedImageUrl(memory.imageUrl)}
               alt={memory.title}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"

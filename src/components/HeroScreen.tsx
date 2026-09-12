@@ -152,7 +152,7 @@ export const HeroScreen: React.FC<HeroScreenProps> = ({
           }}
         >
           <span className="relative z-10 text-sm sm:text-[15px] tracking-wide font-medium">
-            Para nuestra cita -&gt;
+            Para nuestra cita
           </span>
           <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
