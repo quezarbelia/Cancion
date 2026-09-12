@@ -438,13 +438,12 @@ export const CancionEspecial: React.FC<CancionEspecialProps> = ({
                 </button>
               </div>
 
-              {/* Download / Open Google Drive Song Button */}
+              {/* Direct MP3 Download Button */}
               <div className="pt-3 border-t border-stone-200/60 mt-1">
                 <a
-                  href={coupleConfig.songUrl || 'https://drive.google.com/file/d/1c--0dxkPz4XxsdUeb9pNEqv3BlWftoIM/view?usp=sharing'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl text-xs font-medium flex items-center justify-center gap-2 border transition shadow-xs hover:shadow-sm"
+                  href="/una-gerbera.mp3"
+                  download="Una_Gerbera.mp3"
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 border transition shadow-xs hover:shadow-sm active:scale-[0.98] cursor-pointer touch-manipulation"
                   style={{
                     backgroundColor: 'var(--theme-surface, #F2DCDB)',
                     color: 'var(--theme-primary, #6C0820)',
@@ -452,7 +451,7 @@ export const CancionEspecial: React.FC<CancionEspecialProps> = ({
                   }}
                 >
                   <Download className="w-4 h-4" />
-                  <span>Abrir en Google Drive / Descargar Una Gerbera...</span>
+                  <span>Descargar canción Una Gerbera... (.mp3)</span>
                 </a>
               </div>
             </div>
