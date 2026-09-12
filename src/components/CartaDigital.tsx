@@ -38,7 +38,7 @@ export const CartaDigital: React.FC<CartaDigitalProps> = ({
             </span>
             <div>
               <span className="text-[10px] uppercase tracking-widest text-[var(--theme-primary)] font-bold block">
-                De mi corazón para ti
+                Para mi niña hermosa
               </span>
               <h3 className="font-serif font-bold text-stone-800 text-base sm:text-lg">
                 Para el amor de mi vida
@@ -56,21 +56,21 @@ export const CartaDigital: React.FC<CartaDigitalProps> = ({
             <span className="font-serif text-3xl float-left mr-1.5 leading-none text-[var(--theme-primary)] font-bold">
               S
             </span>
-            i tuviera que volver a escribir cada segundo desde que cruzamos miradas, elegiría exactamente el mismo camino. Encontrarte ha sido el regalo más sincero y la aventura más hermosa que jamás soñé.
+            i tuviera que volver a repetir un momento de mi vida, sin duda sería cuando te conocí, ha sido lo mejor que me ha pasado.
           </p>
           <p>
-            Gracias por ser mi paz en los días grises, por tus risas contagiosas que iluminan cualquier rincón y por convertir cada momento ordinario en una memoria digna de atesorar para siempre. Hoy no solo celebramos una fecha en el calendario; celebramos la manera tan mágica en que construimos un hogar en los brazos del otro.
+            Gracias por siempre alegrarme la vida. Sé que hemos tenido momentos hermosos, como difíciles, pero sin embargo siempre te elegiré; nunca me iré de tu lado, porque eres lo más importante para mí.
           </p>
 
           <blockquote
             className="p-3 my-2 rounded-2xl border-l-4 italic bg-[#FAF5EE] text-stone-800 text-xs sm:text-[13px] shadow-2xs"
             style={{ borderColor: 'var(--theme-primary, #6C0820)' }}
           >
-            "No te amo por cómo eres cuando estás frente a mí, sino por cómo soy yo cuando estoy a tu lado: más libre, más feliz y más en paz."
+            "Te amo porque, a pesar de todas las situaciones, siempre me has amado tanto."
           </blockquote>
 
           <p>
-            Esta velada es solo una pequeña muestra de todo lo que mereces hoy y siempre. Relájate, disfruta de cada sorpresa y acompáñame a escribir un capítulo inolvidable más de nuestra historia.
+            Esta escapadita es un poco de lo mucho que te mereces. Amo pasar tiempo contigo y que podamos seguir creando nuevos recuerdos y un futuro juntos, lleno de amor y felicidad.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export const CartaDigital: React.FC<CartaDigitalProps> = ({
         {/* Signature */}
         <div className="flex items-end justify-between pt-1">
           <div>
-            <span className="text-[11px] text-stone-500 font-serif block">Siempre tuyo(a),</span>
+            <span className="text-[11px] text-stone-500 font-serif block">Siempre tuyo,</span>
             <span className="font-script text-2xl text-[var(--theme-primary)] block -mt-1">
               Con amor infinito
             </span>
@@ -139,7 +139,7 @@ export const CartaDigital: React.FC<CartaDigitalProps> = ({
                     <Heart className="w-7 h-7 opacity-85" />
                   </div>
                 )}
-                
+
                 {/* Date stamp pill */}
                 <span className="absolute bottom-2 right-2 text-[9px] bg-black/60 backdrop-blur-sm text-white px-2 py-0.5 rounded-full font-mono">
                   {memory.date}
