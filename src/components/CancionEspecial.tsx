@@ -10,7 +10,6 @@ import {
   SkipForward,
   Heart,
   Download,
-  KeyRound,
   Disc3,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -44,7 +43,20 @@ export const CancionEspecial: React.FC<CancionEspecialProps> = ({
 
   useEffect(() => {
     const calculateTime = () => {
-      const target = new Date(coupleConfig.unlockTargetDate);
+      // Robust cross-platform date parsing for iOS Safari, Android, and desktop
+      let target: Date;
+      if (typeof coupleConfig.unlockTargetDate === 'string') {
+        const parts = coupleConfig.unlockTargetDate.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?$/);
+        if (parts) {
+          const [, y, m, d, h, min, s] = parts;
+          target = new Date(Number(y), Number(m) - 1, Number(d), Number(h), Number(min), Number(s || 0));
+        } else {
+          target = new Date(coupleConfig.unlockTargetDate);
+        }
+      } else {
+        target = new Date(coupleConfig.unlockTargetDate);
+      }
+
       const now = new Date();
       const diff = target.getTime() - now.getTime();
 
@@ -71,16 +83,6 @@ export const CancionEspecial: React.FC<CancionEspecialProps> = ({
     const timer = setInterval(calculateTime, 1000);
     return () => clearInterval(timer);
   }, [coupleConfig.unlockTargetDate]);
-
-  const handleForceUnlock = () => {
-    setIsUnlocked(true);
-    confetti({
-      particleCount: 80,
-      spread: 75,
-      origin: { y: 0.65 },
-      colors: ['#6C0820', '#F2AEBC', '#5A86CB', '#D4AF37'],
-    });
-  };
 
   const togglePlaySong = () => {
     if (audioRef.current) {
@@ -273,16 +275,6 @@ export const CancionEspecial: React.FC<CancionEspecialProps> = ({
               </div>
             </div>
 
-            {/* Simulation Trigger */}
-            <div className="text-center pt-1">
-              <button
-                onClick={handleForceUnlock}
-                className="text-xs text-stone-500 hover:text-[var(--theme-primary)] transition flex items-center justify-center gap-1.5 mx-auto py-1 px-3 rounded-full hover:bg-stone-100 cursor-pointer touch-manipulation"
-              >
-                <KeyRound className="w-3.5 h-3.5 text-[var(--theme-accent)]" />
-                <span>Simular desbloqueo anticipado (para pruebas)</span>
-              </button>
-            </div>
           </div>
         ) : (
           /* UNLOCKED STATE VIEW */
